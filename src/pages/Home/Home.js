@@ -1,22 +1,23 @@
 import { useAuth } from 'hooks/useAuth';
 import { Opening } from 'components/Openning/Openning';
-import { Container } from './Home.Styled';
+import { Text, Title } from './Home.Styled';
 
 export default function Home() {
   const { isLoggedIn } = useAuth();
+
   return (
-    <Container>
-      <h1>Hello, this is your PhoneBook.</h1>
+    <div>
+      <Title>Hello, this is your PhoneBook.</Title>
       {isLoggedIn ? (
         <Opening />
       ) : (
-        <p>
+        <Text>
           Create your own unique account and get the opportunity to record your
           contacts.
-        </p>
+        </Text>
       )}
-      
-      <p>Fast, Secure and Friendly React Application</p>
-    </Container>
+
+      <Text>Fast, Secure and Friendly React Application</Text>
+    </div>
   );
 }
