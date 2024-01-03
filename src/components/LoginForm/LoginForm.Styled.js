@@ -9,7 +9,6 @@ export const StyledForm = styled(Form)`
 `;
 
 export const Container = styled.div`
-  
   display: flex;
   justify-content: center;
   padding: 15px;
@@ -19,7 +18,10 @@ export const Container = styled.div`
   box-shadow: gray 1px 1px 5px;
 `;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const ErrMessageStyled = styled(ErrorMessage)`
   color: red;

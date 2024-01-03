@@ -7,6 +7,7 @@ import {
   Button,
   Container,
   ErrMessageStyled,
+  Label,
   StyledField,
   StyledForm,
 } from './LoginForm.Styled';
@@ -36,18 +37,18 @@ export const LoginForm = () => {
       >
         <StyledForm autoComplete="off">
           
-            <label>
+            <Label>
               <StyledField name="email" type="email" placeholder="Email" />
               <ErrMessageStyled name="email" component="span" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               <StyledField
                 name="password"
                 type="password"
                 placeholder="Password"
               />
               <ErrMessageStyled name="password" component="span" />
-            </label>
+            </Label>
             <Button type="submit">Log In</Button>
           
         </StyledForm>
