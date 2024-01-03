@@ -6,9 +6,16 @@ import {
   updateContact,
 } from './operations';
 
-const handlePending = state => {
+const initialState = {
+  items: [],
+  isLoading: false,
+  error: null,
+};
+
+const handlePending = (state) => {
   state.isLoading = true;
 };
+
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
@@ -16,52 +23,59 @@ const handleRejected = (state, action) => {
 
 const contactSlice = createSlice({
   name: 'contacts',
-  initialState: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
-  // Добавляем обработку внешних экшенов
-  extraReducers: {
-    [fetchContacts.pending]: handlePending,
-    [addContact.pending]: handlePending,
-    [deleteContact.pending]: handlePending,
-    [updateContact.pending]: handlePending,
-    [fetchContacts.rejected]: handleRejected,
-    [addContact.rejected]: handleRejected,
-    [deleteContact.rejected]: handleRejected,
-    [updateContact.rejected]: handleRejected,
+  initialState,
+  reducers: {},
+});
 
-    [fetchContacts.fulfilled](state, action) {
+contactSlice.reducer = (state, action) => {
+  switch (action.type) {
+    case fetchContacts.pending.type:
+    case addContact.pending.type:
+    case deleteContact.pending.type:
+    case updateContact.pending.type:
+      handlePending(state);
+      break;
+
+    case fetchContacts.rejected.type:
+    case addContact.rejected.type:
+    case deleteContact.rejected.type:
+    case updateContact.rejected.type:
+      handleRejected(state, action);
+      break;
+
+    case fetchContacts.fulfilled.type:
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
-    },
-    [addContact.fulfilled](state, action) {
+      break;
+
+    case addContact.fulfilled.type:
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
-    },
+      break;
 
-    [deleteContact.fulfilled](state, action) {
+    case deleteContact.fulfilled.type:
       state.isLoading = false;
       state.error = null;
       const index = state.items.findIndex(
-        contact => contact.id === action.payload.id
+        (contact) => contact.id === action.payload.id
       );
       state.items.splice(index, 1);
-    },
+      break;
 
-    [updateContact.fulfilled](state, action) {
+    case updateContact.fulfilled.type:
       state.isLoading = false;
       state.error = null;
       const updatedContact = action.payload;
-      const updatedList = state.items.map(contact =>
+      state.items = state.items.map((contact) =>
         contact.id === updatedContact.id ? updatedContact : contact
       );
-      state.items = updatedList;
-    },
-  },
-});
+      break;
+
+    default:
+      break;
+  }
+};
 
 export const contactsReducer = contactSlice.reducer;
