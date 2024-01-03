@@ -1,8 +1,9 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { Notify } from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
 import * as Yup from 'yup';
+import { Button, Container, ErrMessageStyled, StyledField, StyledForm } from './LoginForm.Styled';
 
 const ContactShema = Yup.object().shape({
     email: Yup.string()
@@ -26,21 +27,21 @@ const ContactShema = Yup.object().shape({
         }}
         validationSchema={ContactShema}
       >
-        <Form autoComplete="off">
-          <div>
+        <StyledForm autoComplete="off">
+          <Container>
             <label>
               Email
-              <Field name="email" type="email" />
-              <ErrorMessage name="email" component="span" />
+              <StyledField name="email" type="email" />
+              <ErrMessageStyled name="email" component="span" />
             </label>
             <label>
               Password
-              <Field name="password" type="password" />
-              <ErrorMessage name="password" component="span" />
+              <StyledField name="password" type="password" />
+              <ErrMessageStyled name="password" component="span" />
             </label>
-            <button type="submit">Log In</button>
-          </div>
-        </Form>
+            <Button type="submit">Log In</Button>
+          </Container>
+        </StyledForm>
       </Formik>
     );
   };
