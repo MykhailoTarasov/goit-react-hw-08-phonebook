@@ -3,26 +3,21 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
-
-  width: 100%;
+  flex-direction: column;
+  gap: 16px;
 `;
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 16px;
-
   padding: 15px;
-  background-color: #5dd7d2;
-  border: 1px solid #0daea7;
+  background-color: rgb(93, 215, 210);
+  border: 1px solid rgb(13, 174, 167);
   border-radius: 5px;
   box-shadow: gray 1px 1px 5px;
 `;
 
-export const Label = styled.label`
-
-`;
+export const Label = styled.label``;
 
 export const ErrMessageStyled = styled(ErrorMessage)`
   color: red;
