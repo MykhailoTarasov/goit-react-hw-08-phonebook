@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
-import { MdOutlineUpdate } from "react-icons/md";
+import { GrDocumentUpdate } from "react-icons/gr";
 
 export const ListItem = styled.li`
   display: flex;
@@ -45,9 +45,10 @@ export const DeleteIcon = styled(FaTrashCan)`
   transform: translate(-50%, -50%);
 `;
 
-export const UpdateIcon = styled(MdOutlineUpdate)`
+export const UpdateIcon = styled(GrDocumentUpdate)`
   position: absolute;
   transform: translate(-50%, -50%);
+
 `;
 
 export const Text = styled.span`
@@ -58,5 +59,5 @@ export const Text = styled.span`
 
 export const ButtonBox = styled.div`
 display: flex;
-gap: 10px;
+gap: 15px;
 `

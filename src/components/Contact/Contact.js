@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
 import {
+  ButtonBox,
   ButtonItem,
   DeleteIcon,
   ListItem,
@@ -33,14 +34,14 @@ export const Contact = ({ id, name, number }) => {
       <Text>
         {name}: {number}
       </Text>
-      <div>
+      <ButtonBox>
         <ButtonItem type="button" onClick={() => handlerOnClick(id)}>
           <DeleteIcon />
         </ButtonItem>
         <ButtonItem type="button" onClick={openModal}>
           <UpdateIcon />
         </ButtonItem>
-      </div>
+      </ButtonBox>
       {isModalOpen && (
         <CustomModalForm
           isOpen={isModalOpen}
