@@ -1,10 +1,11 @@
 import { useAuth } from 'hooks/useAuth';
 import { Opening } from 'components/Openning/Openning';
+import { Container } from './Home.Styled';
 
 export default function Home() {
   const { isLoggedIn } = useAuth();
   return (
-    <div>
+    <Container>
       <h1>Hello, this is your PhoneBook.</h1>
       {isLoggedIn ? (
         <Opening />
@@ -16,6 +17,6 @@ export default function Home() {
       )}
       
       <p>Fast, Secure and Friendly React Application</p>
-    </div>
+    </Container>
   );
 }

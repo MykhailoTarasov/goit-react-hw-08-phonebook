@@ -8,7 +8,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { Header } from './Header/Header';
 
 
-const HomePage = lazy(() => import('../pages/Home.js'));
+const HomePage = lazy(() => import('../pages/Home/Home.js'));
 const RegisterPage = lazy(() => import('../pages/Register.js'));
 const LoginPage = lazy(() => import('../pages/Login.js'));
 const ContactsPage = lazy(() => import('../pages/Contacts.js'));
