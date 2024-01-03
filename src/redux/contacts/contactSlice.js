@@ -12,6 +12,12 @@ const initialState = {
   error: null,
 };
 
+const contactSlice = createSlice({
+  name: 'contacts',
+  initialState,
+  reducers: {},
+});
+
 const handlePending = (state) => {
   state.isLoading = true;
 };
@@ -21,11 +27,29 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const contactSlice = createSlice({
-  name: 'contacts',
-  initialState,
-  reducers: {},
-});
+const addFulfilledCase = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  state.items.push(action.payload);
+};
+
+const deleteFulfilledCase = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  const index = state.items.findIndex(
+    (contact) => contact.id === action.payload.id
+  );
+  state.items.splice(index, 1);
+};
+
+const updateFulfilledCase = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  const updatedContact = action.payload;
+  state.items = state.items.map((contact) =>
+    contact.id === updatedContact.id ? updatedContact : contact
+  );
+};
 
 contactSlice.reducer = (state, action) => {
   switch (action.type) {
@@ -50,27 +74,15 @@ contactSlice.reducer = (state, action) => {
       break;
 
     case addContact.fulfilled.type:
-      state.isLoading = false;
-      state.error = null;
-      state.items.push(action.payload);
+      addFulfilledCase(state, action);
       break;
 
     case deleteContact.fulfilled.type:
-      state.isLoading = false;
-      state.error = null;
-      const index = state.items.findIndex(
-        (contact) => contact.id === action.payload.id
-      );
-      state.items.splice(index, 1);
+      deleteFulfilledCase(state, action);
       break;
 
     case updateContact.fulfilled.type:
-      state.isLoading = false;
-      state.error = null;
-      const updatedContact = action.payload;
-      state.items = state.items.map((contact) =>
-        contact.id === updatedContact.id ? updatedContact : contact
-      );
+      updateFulfilledCase(state, action);
       break;
 
     default:
