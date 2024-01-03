@@ -10,6 +10,7 @@ export const StyledForm = styled(Form)`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 16px;
 
   padding: 15px;
@@ -20,8 +21,7 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.label`
-  display: flex;
-  flex-direction: column;
+
 `;
 
 export const ErrMessageStyled = styled(ErrorMessage)`
