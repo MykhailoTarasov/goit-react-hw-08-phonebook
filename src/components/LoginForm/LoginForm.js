@@ -30,13 +30,13 @@ const ContactShema = Yup.object().shape({
         <StyledForm autoComplete="off">
           <Container>
             <label>
-              Email
-              <StyledField name="email" type="email" />
+              
+              <StyledField name="email" type="email" placeholder="Email"/>
               <ErrMessageStyled name="email" component="span" />
             </label>
             <label>
-              Password
-              <StyledField name="password" type="password" />
+              
+              <StyledField name="password" type="password" placeholder="Password"/>
               <ErrMessageStyled name="password" component="span" />
             </label>
             <Button type="submit">Log In</Button>

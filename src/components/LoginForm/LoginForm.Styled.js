@@ -3,20 +3,25 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
+
+  width: 100%;
 `;
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
   flex-direction: column;
   gap: 16px;
-  
 
   padding: 15px;
   background-color: #5dd7d2;
   border: 1px solid #0daea7;
   border-radius: 5px;
   box-shadow: gray 1px 1px 5px;
+`;
+
+export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ErrMessageStyled = styled(ErrorMessage)`
