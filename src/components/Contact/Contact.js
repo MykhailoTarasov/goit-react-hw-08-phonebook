@@ -3,7 +3,13 @@ import { Notify } from 'notiflix';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
-import { ButtonItem, DeleteIcon, ListItem, Text } from './Contact.Styled';
+import {
+  ButtonItem,
+  DeleteIcon,
+  ListItem,
+  Text,
+  UpdateIcon,
+} from './Contact.Styled';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -23,25 +29,25 @@ export const Contact = ({ id, name, number }) => {
   };
 
   return (
-    
-      <ListItem>
-        <Text>
-          {name}: {number}
-        </Text>
+    <ListItem>
+      <Text>
+        {name}: {number}
+      </Text>
+      <div>
         <ButtonItem type="button" onClick={() => handlerOnClick(id)}>
-          <DeleteIcon/>
+          <DeleteIcon />
         </ButtonItem>
-        <button type="button" onClick={openModal}>
-          Update
-        </button>
-        {isModalOpen && (
-          <CustomModalForm
-            isOpen={isModalOpen}
-            onClose={closeModal}
-            userId={id}
-          />
-        )}
-      </ListItem>
-    
+        <ButtonItem type="button" onClick={openModal}>
+          <UpdateIcon />
+        </ButtonItem>
+      </div>
+      {isModalOpen && (
+        <CustomModalForm
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          userId={id}
+        />
+      )}
+    </ListItem>
   );
 };

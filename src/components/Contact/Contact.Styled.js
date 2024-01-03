@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
+import { MdOutlineUpdate } from "react-icons/md";
 
 export const ListItem = styled.li`
   display: flex;
@@ -44,8 +45,18 @@ export const DeleteIcon = styled(FaTrashCan)`
   transform: translate(-50%, -50%);
 `;
 
+export const UpdateIcon = styled(MdOutlineUpdate)`
+  position: absolute;
+  transform: translate(-50%, -50%);
+`;
+
 export const Text = styled.span`
   margin: 0;
   text-shadow: grey 2px 2px 5px;
   font-weight: 500;
 `;
+
+export const ButtonBox = styled.div`
+display: flex;
+gap: 10px;
+`
