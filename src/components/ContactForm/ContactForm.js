@@ -11,8 +11,9 @@ import {
   UserIcon,
 } from './ContactForm.Styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/api';
+import { selectContacts } from '../../redux/contacts/selectors';
+import { addContact } from '../../redux/contacts/operations';
+import { Notify } from 'notiflix';
 
 
 const validation = Yup.object().shape({
@@ -40,10 +41,11 @@ export const ContactForm = () => {
       contact => contact.name.toLowerCase() === values.name.toLowerCase()
     );
     if (nameExists) {
-      alert(`${values.name} is already in contacts.`);
+      return Notify.failure(`${values.name} is already in contacts`);
     } else {
       dispatch(addContact(values));
-      actions.resetForm({ name: '', phone: '' });
+      Notify.success(`${values.name} added to contacts`);
+      actions.resetForm({ name: '', number: '' });
     }
   };
 
