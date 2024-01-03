@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
-import { updateContact } from 'redux/contacts/operations';
+import { updateContact } from '../../redux/contacts/operations';
 import { Notify } from 'notiflix';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 

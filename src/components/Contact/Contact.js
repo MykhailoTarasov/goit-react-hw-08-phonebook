@@ -2,7 +2,7 @@ import { CustomModalForm } from "components/CustomerModal/CustomerModal";
 import { Notify } from "notiflix";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "redux/contacts/operations";
+import { deleteContact } from "../../redux/contacts/operations";
 
 export const Contact = ({ id, name, number }) => {
     const dispatch = useDispatch();
