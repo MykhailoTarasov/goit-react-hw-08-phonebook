@@ -3,7 +3,7 @@ import { Notify } from 'notiflix';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
-import { ButtonItem, List, ListItem, Text } from './Contact.Styled';
+import { ButtonItem, ListItem, Text } from './Contact.Styled';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ export const Contact = ({ id, name, number }) => {
   };
 
   return (
-    <List>
+    <div>
       <ListItem>
         <Text>
           {name}: {number}
@@ -42,6 +42,6 @@ export const Contact = ({ id, name, number }) => {
           />
         )}
       </ListItem>
-    </List>
+    </div>
   );
 };

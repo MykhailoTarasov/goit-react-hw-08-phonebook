@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
 
-export const List = styled.ul`
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 0;
-`;
-
 export const ListItem = styled.li`
   display: flex;
   align-items: center;
@@ -53,7 +44,7 @@ export const DeleteIcon = styled(FaTrashCan)`
   transform: translate(-50%, -50%);
 `;
 
-export const Text = styled.p`
+export const Text = styled.span`
   margin: 0;
   text-shadow: grey 2px 2px 5px;
   font-weight: 500;
