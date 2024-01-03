@@ -5,15 +5,16 @@ import { UserMenu } from "components/UserMenu/UserMenu";
 import { useAuth } from "hooks";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { StyledHeader } from "./Header.Styled";
 
 export const Header = () => {
   const { isLoggedIn } = useAuth();
   return (
     <Container>
-      <header>
+      <StyledHeader>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </header>
+      </StyledHeader>
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
