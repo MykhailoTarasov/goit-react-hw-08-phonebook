@@ -51,7 +51,7 @@ export const RegisterForm = () => {
         validationSchema={ContactShema}
       >
         <StyledForm autoComplete="off">
-          <div>
+          
             <Label>
               <StyledField name="name" type="text" placeholder="Name" />
               <ErrMessageStyled name="name" component="span" />
@@ -69,7 +69,7 @@ export const RegisterForm = () => {
               <ErrMessageStyled name="password" component="span" />
             </Label>
             <Button type="submit">Log In</Button>
-          </div>
+          
         </StyledForm>
       </Formik>
     </Container>

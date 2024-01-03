@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
+display: flex;
+flex-direction: column;
+
+gap: 16px;
 `;
 
 export const Container = styled.div`
