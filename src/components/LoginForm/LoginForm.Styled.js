@@ -3,14 +3,14 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
-  flex-direction: column;
-
-  gap: 16px;
 `;
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  
 
   padding: 15px;
   background-color: #5dd7d2;
