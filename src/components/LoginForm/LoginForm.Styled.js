@@ -5,9 +5,11 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 `;
 
 export const Container = styled.div`
+  
   display: flex;
   justify-content: center;
   padding: 15px;
