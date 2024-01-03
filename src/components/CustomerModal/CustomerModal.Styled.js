@@ -25,6 +25,8 @@ export const Container = styled.div`
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ErrMessageStyled = styled(ErrorMessage)`
@@ -32,7 +34,7 @@ export const ErrMessageStyled = styled(ErrorMessage)`
 `;
 
 export const StyledField = styled(Field)`
-  width: 200px;
+  max-width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
