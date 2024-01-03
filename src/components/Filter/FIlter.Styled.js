@@ -8,6 +8,7 @@ export const FilterContainer = styled.div`
   gap: 5px;
   text-allign: center;
   padding-bottom: 20px;
+  padding-top: 20px;
 `;
 
 export const FilterTitle = styled.h3`
