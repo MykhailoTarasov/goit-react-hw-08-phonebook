@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
-
+import { IoCloseSharp } from "react-icons/io5";
 
 
 export const StyledForm = styled(Form)`
@@ -9,7 +9,6 @@ display: flex;
 flex-direction: column;
 gap: 15px;
 max-width: 50%;
-margin-bottom: 20px;
 `;
 
 export const Container = styled.div`
@@ -54,3 +53,28 @@ export const Button = styled.button`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: 1px solid rgba(33, 33, 33, 0.2);
 `;
+
+export const StyledTitle = styled.h2`
+text-align: center;
+`
+export const CloseButton = styled.button`
+position: relative;
+
+color: white;
+background-color: #4d83c2;
+cursor: pointer;
+padding: 5px;
+width: 30px;
+height: 30px;
+
+border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border: 1px solid rgba(33, 33, 33, 0.2);
+`
+
+export const CloseIcon = styled(IoCloseSharp)`
+width: 20px;
+height: 20px;
+position: absolute;
+transform: translate(-50%, -50%);
+`

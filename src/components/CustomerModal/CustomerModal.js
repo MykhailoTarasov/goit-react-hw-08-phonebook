@@ -6,12 +6,16 @@ import { Notify } from 'notiflix';
 import { Formik } from 'formik';
 import {
   Button,
+  CloseButton,
+  CloseIcon,
   Container,
   ErrMessageStyled,
   Label,
   StyledField,
-  StyledForm
+  StyledForm,
+  StyledTitle
 } from './CustomerModal.Styled';
+
 
 const ContactShema = Yup.object().shape({
   name: Yup.string()
@@ -55,8 +59,8 @@ export const CustomModalForm = ({ isOpen, onClose, userId, customStyles }) => {
         style={customStyles}
         contentLabel="Modal Form"
       >
-        <button onClick={onClose}>&times;</button>
-        <h2>Please, enter new contact details:</h2>
+        <CloseButton onClick={onClose}><CloseIcon /></CloseButton>
+        <StyledTitle>Please, enter new contact details:</StyledTitle>
         <Container>
           <Formik
             initialValues={{ name: '', number: '' }}
