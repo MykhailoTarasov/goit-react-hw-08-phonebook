@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Link, Text } from "./Openning.Styled";
 
 export const Opening = () => {
     return (
       <div>
-        <p>
+        <Text>
           It is designed to help your brain not remember numbers, but write them
           down.
-        </p>
-        <NavLink to={'/contacts'}>Add contact</NavLink>
+        </Text>
+        <Link to={'/contacts'}>Add contact</Link>
       </div>
     );
   };
