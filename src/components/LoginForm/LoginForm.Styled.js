@@ -2,18 +2,19 @@ import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-gap: 16px;
+  gap: 16px;
 `;
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+
   padding: 15px;
-  background-color: rgb(93, 215, 210);
-  border: 1px solid rgb(13, 174, 167);
+  background-color: #5dd7d2;
+  border: 1px solid #0daea7;
   border-radius: 5px;
   box-shadow: gray 1px 1px 5px;
 `;
