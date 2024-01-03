@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SyledHeader = styled.header`
+export const StyledHeader = styled.header`
 padding-bottom: 15px;
 `
 
