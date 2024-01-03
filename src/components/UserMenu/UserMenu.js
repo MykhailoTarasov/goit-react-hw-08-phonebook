@@ -2,7 +2,7 @@ import { useAuth } from "hooks";
 import { Notify } from "notiflix";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../redux/auth/operations";
-import { StyledButton } from "./UserMenu.styled";
+import { StyledButton, Text } from "./UserMenu.styled";
 
 export const UserMenu = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const UserMenu = () => {
   
     return (
       <div>
-        <p>Welcome, {user.name}</p>
+        <Text>Welcome, {user.name}</Text>
         <StyledButton type="button" onClick={() => handlerOnClick()}>
           Log out
         </StyledButton>
