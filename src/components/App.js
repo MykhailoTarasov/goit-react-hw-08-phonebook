@@ -8,11 +8,11 @@ import { PrivateRoute } from './PrivateRoute';
 import { Header } from './Header/Header';
 
 
-const HomePage = lazy(() => import('../pages/Home'));
-const RegisterPage = lazy(() => import('../pages/Register'));
-const LoginPage = lazy(() => import('../pages/Login'));
-const ContactsPage = lazy(() => import('../pages/Contacts'));
-const NotFound = lazy(() => import('../pages/NotFound'));
+const HomePage = lazy(() => import('../pages/Home.js'));
+const RegisterPage = lazy(() => import('../pages/Register.js'));
+const LoginPage = lazy(() => import('../pages/Login.js'));
+const ContactsPage = lazy(() => import('../pages/Contacts.js'));
+const NotFound = lazy(() => import('../pages/NotFound.js'));
 
 export const App = () => {
   const dispatch = useDispatch();
