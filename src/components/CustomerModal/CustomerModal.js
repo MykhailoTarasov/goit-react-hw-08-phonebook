@@ -9,10 +9,8 @@ import {
   Container,
   ErrMessageStyled,
   Label,
-  ModalBox,
   StyledField,
-  StyledForm,
-  StyledModal,
+  StyledForm
 } from './CustomerModal.Styled';
 
 const ContactShema = Yup.object().shape({
@@ -50,8 +48,8 @@ export const CustomModalForm = ({ isOpen, onClose, userId, customStyles }) => {
   };
 
   return (
-    <ModalBox>
-      <StyledModal
+    
+      <Modal
         isOpen={isOpen}
         onRequestClose={onClose}
         style={customStyles}
@@ -81,7 +79,7 @@ export const CustomModalForm = ({ isOpen, onClose, userId, customStyles }) => {
             </StyledForm>
           </Formik>
         </Container>
-      </StyledModal>
-    </ModalBox>
+      </Modal>
+    
   );
 };
