@@ -9,6 +9,7 @@ import {
   Container,
   ErrMessageStyled,
   Label,
+  ModalBox,
   StyledField,
   StyledForm,
   StyledModal,
@@ -49,36 +50,38 @@ export const CustomModalForm = ({ isOpen, onClose, userId, customStyles }) => {
   };
 
   return (
-    <StyledModal
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      style={customStyles}
-      contentLabel="Modal Form"
-    >
-      <button onClick={onClose}>&times;</button>
-      <h2>Please, enter new contact details:</h2>
-      <Container>
-        <Formik
-          initialValues={{ name: '', number: '' }}
-          onSubmit={(values, actions) => {
-            handleSubmit(values, actions);
-          }}
-          validationSchema={ContactShema}
-        >
-          <StyledForm>
-            <Label>
-              <StyledField name="name" type="text" placeholder="Name" />
-              <ErrMessageStyled name="name" component="span" />
-            </Label>
+    <ModalBox>
+      <StyledModal
+        isOpen={isOpen}
+        onRequestClose={onClose}
+        style={customStyles}
+        contentLabel="Modal Form"
+      >
+        <button onClick={onClose}>&times;</button>
+        <h2>Please, enter new contact details:</h2>
+        <Container>
+          <Formik
+            initialValues={{ name: '', number: '' }}
+            onSubmit={(values, actions) => {
+              handleSubmit(values, actions);
+            }}
+            validationSchema={ContactShema}
+          >
+            <StyledForm>
+              <Label>
+                <StyledField name="name" type="text" placeholder="Name" />
+                <ErrMessageStyled name="name" component="span" />
+              </Label>
 
-            <Label>
-              <StyledField name="number" type="tel" placeholder="Number" />
-              <ErrMessageStyled name="number" component="span" />
-            </Label>
-            <Button type="submit">Update contact</Button>
-          </StyledForm>
-        </Formik>
-      </Container>
-    </StyledModal>
+              <Label>
+                <StyledField name="number" type="tel" placeholder="Number" />
+                <ErrMessageStyled name="number" component="span" />
+              </Label>
+              <Button type="submit">Update contact</Button>
+            </StyledForm>
+          </Formik>
+        </Container>
+      </StyledModal>
+    </ModalBox>
   );
 };

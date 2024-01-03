@@ -2,9 +2,17 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 import { Form, Field, ErrorMessage } from 'formik';
 
+export const ModalBox = styled.div`
+margin-left: auto;
+margin-right: auto;
+padding: 20px;
+margin-top: 15px;
+backgroung-color: #8df2ee;
+`
+
 export const StyledModal = styled(Modal)`
 width: 500px;
-backgroung-color: #8df2ee;
+
 `
 
 export const StyledForm = styled(Form)`
