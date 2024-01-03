@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
+  width: 120px;
   align-self: center;
-
   padding: 10px;
   color: white;
   background-color: #4d83c2;
@@ -14,6 +14,6 @@ export const StyledButton = styled.button`
 `;
 
 export const Text = styled.p`
-text-shadow: grey 2px 2px 5px;
-text-align: center;
-`
+  text-shadow: grey 2px 2px 5px;
+  text-align: center;
+`;
