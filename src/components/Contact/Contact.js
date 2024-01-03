@@ -3,7 +3,7 @@ import { Notify } from 'notiflix';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
-import { ButtonItem, ListItem, Text } from './Contact.Styled';
+import { ButtonItem, DeleteIcon, ListItem, Text } from './Contact.Styled';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export const Contact = ({ id, name, number }) => {
           {name}: {number}
         </Text>
         <ButtonItem type="button" onClick={() => handlerOnClick(id)}>
-          Delete
+          <DeleteIcon/>
         </ButtonItem>
         <button type="button" onClick={openModal}>
           Update
