@@ -23,7 +23,7 @@ export const Contact = ({ id, name, number }) => {
   };
 
   return (
-    <div>
+    
       <ListItem>
         <Text>
           {name}: {number}
@@ -42,6 +42,6 @@ export const Contact = ({ id, name, number }) => {
           />
         )}
       </ListItem>
-    </div>
+    
   );
 };
